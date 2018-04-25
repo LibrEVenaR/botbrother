@@ -1,0 +1,26 @@
+{
+  "name": "bbot",
+  "version": "1.1.1",
+  "description": "Bot pour le Discord du journal",
+  "main": "bbot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bot": "node src/bbot.js",
+    "pm2:bot": "pm2 start bbot.js"
+  },
+  "author": "Thorondhor",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "ffmpeg": "0.0.4",
+    "node-opus": "^0.2.7",
+    "opusscript": "0.0.6",
+    "snekfetch": "^3.6.4",
+    "ytdl-core": "^0.20.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "journal",
+    "bot"
+  ]
+}

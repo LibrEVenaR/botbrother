@@ -1,0 +1,2 @@
+worker: node bbot.js
+
