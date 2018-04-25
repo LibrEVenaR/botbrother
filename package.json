@@ -5,7 +5,7 @@
   "main": "bbot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bot": "node src/bbot.js",
+    "bot": "node bbot.js",
     "pm2:bot": "pm2 start bbot.js"
   },
   "author": "Thorondhor",
