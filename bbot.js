@@ -1,6 +1,3 @@
-//partition
-const botconfig = require("../botconfig.json");
-const tokenfile = require("../token.json");
 ///dépendances
 const Discord = require("discord.js");
 require("opusscript");
@@ -13,6 +10,9 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 let cooldown = new Set();
 let cdseconds = 5;
+//partition
+const botconfig = require("./botconfig.json");
+const tokenfile = require("./token.json");
 ///commandes
 fs.readdir("./commands/", (err, files) => {
  
