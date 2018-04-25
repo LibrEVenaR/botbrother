@@ -1,6 +1,6 @@
 //partition
-const botconfig = require("./botconfig.json");
-const tokenfile = require("./token.json");
+const botconfig = require("../botconfig.json");
+const tokenfile = require("../token.json");
 ///dépendances
 const Discord = require("discord.js");
 require("opusscript");
