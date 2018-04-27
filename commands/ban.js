@@ -16,26 +16,26 @@ module.exports.run = async (bot, message, args) => {
     if(bUser.hasPermission("MANAGE_MESSAGES")) return errors.equalPerms(message, bUser, "MANAGE_MESSAGES");
 
     let banEmbed = new Discord.RichEmbed()
- .setColor('16098851')
     .setTitle("*Opération  de la police de la pensée*")
+    .setColor("#b70000")
     .setAuthor("L'écho d'Elvenar",
-        'https://image.noelshack.com/fichiers/2018/04/7/1517180176-logo-journal.png',
+        message.guild.iconURL,
         'https://fr.forum.elvenar.com/index.php?threads/nouvelle-charte-du-journal-signature-obligatoire.13953/')
     .setDescription("~Expulsion~")
     .setThumbnail("http://www.zupimages.net/up/17/15/a1yf.png")
-    .addField("Utilisateur banni : ", `${kUser} with ID ${kUser.id}`)
+    .addField("Utilisateur banni : ", `${bUser} with ID ${bUser.id}`)
     .addField("Bannisement par", `<@${message.author.id}> with ID ${message.author.id}`)
     .addBlankField()
     .addField("Date : ", message.createdAt)
-    .addField("Motif : ", kReason)
+    .addField("Motif : ", bReason)
     .addField("Arrestation sur ", message.channel)
     .addField('Source', "__*LibrE'VenaR*__", true)
     .addField('Informations complémentaires :', "**Régime** : Dictature de *Big Eagle*", true)
     .setTimestamp()
-    .setFooter('signé par Big Eagle', "http://image.noelshack.com/fichiers/2015/46/1447197021-thorondhor.png");
+    .setFooter('signé par Big Eagle', message.guild.owner.user.avatarURL);
 
-    let incidentchannel = message.guild.channels.find(`name`, "incidents");
-    if(!incidentchannel) return message.channel("** Bot Brother *is watching* YOU**. \n Je n'ai pas trouvé où afficher les logs.", { banEmbed }); 
+    const incidentchannel = message.guild.channels.find(`name`, "logs-des-bots");
+    if(!incidentchannel) return message.reply("**Bot Brother** is watching **YOU**. \n Je n'ai pas trouvé où afficher les logs.", { banEmbed }); 
 
     message.guild.member(bUser).ban(bReason);
     incidentchannel.send(banEmbed);

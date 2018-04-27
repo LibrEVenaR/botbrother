@@ -1,20 +1,11 @@
 const Discord = require("discord.js");
 const errors = require("../utils/errors.js");
-const botconfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
-///set prefix
-let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
-  if(!prefixes[message.guild.id]){
-    prefixes[message.guild.id] = {
-      prefixes: botconfig.prefix
-    };
-  }
-  let prefix = prefixes[message.guild.id].prefixes;
 
   if (!message.member.hasPermission("MANAGE_ROLES")) return errors.noPerms(message, "MANAGE_ROLES");
   if(args[0] == "help"){
-    message.reply(`Utilisation: ${prefix}removerole <utilisateur> <rôle>`);
+    message.reply(`Utilisation: !removerole <utilisateur> <rôle>`);
     return;
   }
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
