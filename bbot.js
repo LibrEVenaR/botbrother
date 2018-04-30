@@ -82,5 +82,5 @@ bot.on("message", async message => {
 
 });
 
-bot.login("NDM1NzkyMjg0MTQ4MzAxODI1.DcJF7Q.vXaMaFPbUP73Ds0-w2sqdvAkCRo");
-///process.env.BOT_TOKEN
+bot.login(process.env.BOT_TOKEN);
+///
