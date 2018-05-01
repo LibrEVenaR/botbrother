@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     .setDescription("Dénonciation")
     .setColor("#ff6a00")
     .addField("Utilisateur dénoncé", `${rUser} with ID: ${rUser.id}`)
-    .addField("Déoncé par", `${message.author} with ID: ${message.author.id}`)
+    .addField("Dénoncé par", `${message.author} with ID: ${message.author.id}`)
     .addField("Channel n: ", message.channel)
     .addField("Date : ", message.createdAt)
     .addField("Motif : ", rreason)
